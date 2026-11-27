@@ -1,0 +1,70 @@
+@import '@fontsource-variable/figtree';
+@import '@fontsource-variable/fraunces/opsz.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Figtree Variable', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink antialiased;
+    font-optical-sizing: auto;
+  }
+  :focus-visible {
+    outline: 3px solid #f2b134;
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  /* Headlines and big numbers use the serif. Everything else is Figtree. */
+  .display {
+    font-family: 'Fraunces Variable', Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 560;
+    letter-spacing: -0.02em;
+  }
+
+  /* Adire pattern: kept for the two dark brand moments (landing band, sign-in panel). */
+  .adire {
+    background-color: #1b2250;
+    background-image:
+      radial-gradient(circle, transparent 0 5px, rgba(255, 255, 255, 0.1) 5px 7px, transparent 7px 13px, rgba(255, 255, 255, 0.06) 13px 15px, transparent 15px),
+      radial-gradient(circle, transparent 0 5px, rgba(242, 177, 52, 0.24) 5px 7px, transparent 7px 13px, rgba(255, 255, 255, 0.05) 13px 15px, transparent 15px);
+    background-size: 64px 64px, 64px 64px;
+    background-position: 0 0, 32px 32px;
+  }
+
+  .btn {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-xl bg-ink px-5 py-3.5 text-base font-semibold text-white transition hover:bg-ink-soft active:scale-[0.99] disabled:opacity-60;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-base font-semibold text-ink transition hover:brightness-95 active:scale-[0.99] disabled:opacity-60;
+  }
+  .btn-quiet {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3.5 text-base font-semibold text-ink transition hover:border-ink/40 active:scale-[0.99];
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-3.5 text-base text-ink outline-none placeholder:text-ink/40 focus:border-ink;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 py-2 text-sm font-medium transition;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-white;
+  }
+}
