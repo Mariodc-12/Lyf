@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lyf — Event & Lifestyle Marketplace (MVP)
 
 Plan weddings and events: budget wizard, vendor discovery, booking, and Paystack deposits.
@@ -133,3 +134,7 @@ Point your Paystack dashboard webhook to `POST /api/webhooks/paystack`. For loca
 - Vendors are seeded manually. Add an admin flow or a simple form for onboarding your first 20–30 vendors.
 - Holding or splitting funds needs a licensed PSP arrangement. This MVP only collects deposits through Paystack.
 - Never share `server/.env` or commit it. It holds your database password.
+=======
+# Lyf
+Lyf is an event planning and vendor marketplace for Nigeria. Set a budget, get an automatic split across venue, food, aso-ebi and more, browse vendors by their portfolio and reviews, and pay a 30% deposit through Paystack.
+>>>>>>> 79fd6ba8ec2c722115d4587c779c9c6939634c95
